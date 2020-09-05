@@ -61,7 +61,7 @@ class Operadores {
   private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
-    "\12\0\4\1\35\0\1\2\1\0\1\2\2\0\12\3"+
+    "\12\0\4\1\37\0\1\2\1\3\1\0\1\4\11\5"+
     "\113\0\1\1\u01a2\0\2\1\326\0\u0100\1";
 
   private static int [] zzUnpackcmap_blocks() {
@@ -89,10 +89,10 @@ class Operadores {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\1\1\1\3";
+    "\1\0\1\1\1\2\1\1\1\3\1\0\1\4\1\0";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[5];
+    int [] result = new int[8];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -117,10 +117,10 @@ class Operadores {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\4\0\4\0\10\0\4";
+    "\0\0\0\6\0\6\0\14\0\22\0\30\0\36\0\36";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[5];
+    int [] result = new int[8];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -143,10 +143,11 @@ class Operadores {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\1\5\7\0\1\5";
+    "\1\2\1\3\1\4\2\2\1\5\13\0\1\5\3\0"+
+    "\1\6\2\5\4\0\2\7\4\0\1\10\1\7";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[12];
+    int [] result = new int[36];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -189,10 +190,10 @@ class Operadores {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\2\11\1\1\1\11";
+    "\1\0\2\11\2\1\1\0\1\1\1\0";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[5];
+    int [] result = new int[8];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -666,17 +667,22 @@ class Operadores {
             { 
             }
             // fall through
-          case 4: break;
+          case 5: break;
           case 2:
             { System.out.print(yytext());
             }
             // fall through
-          case 5: break;
+          case 6: break;
           case 3:
-            { System.out.println("Numero aceptado: "+yytext());
+            { System.out.println("Numero entero valido: "+yytext());
             }
             // fall through
-          case 6: break;
+          case 7: break;
+          case 4:
+            { System.out.println("Numero con punto decimal valido: "+yytext());
+            }
+            // fall through
+          case 8: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

@@ -6,19 +6,28 @@ package gt.edu.url.compiladores.EvalarNumero;
 %standalone 
 %line
 %column
-MAS = "+"
 MENOS = "-"
-SIGNO = ({MAS}|{MENOS})?
-NUMERO = [0-9]
-CADENA = {SIGNO}{NUMERO}
+PUNTO = "."
+N0 = 0
+SIGNO = ({MENOS})?
+NUMERO09 = [0-9]
+NUMERO19 = [1-9]
+NUMERO_DECIMAL = {SIGNO}{NUMERO19}{NUMERO09}*{PUNTO}({NUMERO09}*{NUMERO19}|{N0})
+NUMERO_ENTERO = {SIGNO}{NUMERO19}{NUMERO09}*
+
+
 
  /*Estas variables son expresiones regulares*/
+
 
 %%
 /*Seccione en donde indicamos como queremos encontrar la informacion*/
 /*Esto indica que debe de hacer la variable, y es un codigo escrito en java*/
-{CADENA} {
-System.out.println("Numero aceptado: "+yytext());
+{NUMERO_DECIMAL} {
+System.out.println("Numero con punto decimal valido: "+yytext());
+}
+{NUMERO_ENTERO} {
+System.out.println("Numero entero valido: "+yytext());
 }
 
 .  { }
