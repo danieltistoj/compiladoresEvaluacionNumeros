@@ -713,7 +713,7 @@ class Operadores {
             // fall through
           case 20: break;
           case 7:
-            { System.out.println("Numero valido en nomenglatura cientifica: "+yytext());
+            { System.out.println("Numero valido en nomenclatura cientifica: "+yytext());
             }
             // fall through
           case 21: break;
