@@ -90,12 +90,13 @@ class Operadores {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\3\1\1\3\3\0\1\4\1\0"+
-    "\1\5\1\6\1\4\1\7\1\0\1\10\2\0\1\11"+
-    "\2\4\1\12\1\4\1\0";
+    "\1\0\1\1\1\2\3\1\1\3\1\4\3\0\1\5"+
+    "\1\6\1\0\1\7\1\0\1\10\1\11\1\5\1\12"+
+    "\1\6\1\0\1\13\2\0\1\14\2\5\1\0\1\15"+
+    "\1\16\1\5\1\0";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[26];
+    int [] result = new int[33];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -121,12 +122,13 @@ class Operadores {
 
   private static final String ZZ_ROWMAP_PACKED_0 =
     "\0\0\0\10\0\10\0\20\0\30\0\40\0\50\0\60"+
-    "\0\40\0\70\0\100\0\110\0\120\0\130\0\140\0\150"+
-    "\0\160\0\170\0\200\0\130\0\210\0\220\0\230\0\240"+
-    "\0\210\0\240";
+    "\0\70\0\40\0\100\0\110\0\120\0\130\0\140\0\150"+
+    "\0\160\0\170\0\200\0\210\0\220\0\230\0\240\0\250"+
+    "\0\170\0\260\0\270\0\300\0\310\0\320\0\330\0\260"+
+    "\0\330";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[26];
+    int [] result = new int[33];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -149,18 +151,21 @@ class Operadores {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\1\5\1\2\1\6\1\7\1\2"+
-    "\12\0\2\10\6\0\2\10\1\0\1\11\1\7\5\0"+
-    "\1\12\2\11\5\0\1\13\2\7\1\14\2\0\2\10"+
-    "\2\0\1\15\6\0\2\16\5\0\1\17\2\20\4\0"+
-    "\1\21\2\0\1\22\5\0\1\23\2\15\6\0\1\24"+
-    "\1\16\5\0\1\17\2\25\5\0\1\26\1\27\1\20"+
-    "\1\14\6\0\1\22\6\0\2\22\6\0\2\30\5\0"+
-    "\1\26\1\31\1\25\5\0\3\26\5\0\1\26\1\27"+
-    "\1\20\6\0\1\32\1\30\1\0";
+    "\1\2\1\3\1\4\1\5\1\2\1\6\1\7\1\10"+
+    "\12\0\2\11\6\0\2\11\1\0\1\12\1\7\5\0"+
+    "\1\13\2\12\5\0\1\14\2\7\1\15\3\0\1\16"+
+    "\2\0\1\17\1\20\2\0\2\11\2\0\1\21\6\0"+
+    "\2\22\5\0\1\23\2\24\4\0\1\16\2\0\1\17"+
+    "\1\25\6\0\1\17\6\0\2\17\4\0\1\26\2\0"+
+    "\1\27\1\20\4\0\1\30\2\21\6\0\1\31\1\22"+
+    "\5\0\1\23\2\32\5\0\1\33\1\34\1\24\1\15"+
+    "\3\0\1\35\2\0\1\36\1\25\6\0\1\27\6\0"+
+    "\2\27\6\0\2\37\5\0\1\33\1\40\1\32\5\0"+
+    "\3\33\5\0\1\33\1\34\1\24\7\0\1\36\6\0"+
+    "\2\36\6\0\1\41\1\37\1\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[168];
+    int [] result = new int[224];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -203,11 +208,11 @@ class Operadores {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\2\11\4\1\3\0\1\1\1\0\4\1\1\0"+
-    "\1\1\2\0\5\1\1\0";
+    "\1\0\2\11\5\1\3\0\2\1\1\0\1\1\1\0"+
+    "\5\1\1\0\1\1\2\0\3\1\1\0\3\1\1\0";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[26];
+    int [] result = new int[33];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -681,52 +686,72 @@ class Operadores {
             { 
             }
             // fall through
-          case 11: break;
+          case 15: break;
           case 2:
             { System.out.print(yytext());
             }
             // fall through
-          case 12: break;
+          case 16: break;
           case 3:
             { System.out.println("Numero entero valido: "+yytext());
             }
             // fall through
-          case 13: break;
-          case 4:
-            { System.out.println("Numero invalido, error 4: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
-            }
-            // fall through
-          case 14: break;
-          case 5:
-            { System.out.println("Numero invalido, el numero tiene mas de un signo: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
-            }
-            // fall through
-          case 15: break;
-          case 6:
-            { System.out.println("Numero invalido, el numero tiene ceros al inicio: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
-            }
-            // fall through
-          case 16: break;
-          case 7:
-            { System.out.println("Numero con punto decimal valido: "+yytext());
-            }
-            // fall through
           case 17: break;
-          case 8:
-            { System.out.println("Numero valido en nomenglatura cientifica: "+yytext());
+          case 4:
+            { System.out.println("El termino E no puede ir solo: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
             }
             // fall through
           case 18: break;
-          case 9:
-            { System.out.println("Numero invalido, el numero tine mas de un punto: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
+          case 5:
+            { System.out.println("Numero invalido, error 4: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
             }
             // fall through
           case 19: break;
-          case 10:
-            { System.out.println("Numero invalido, el numero tiene las de un signo: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
+          case 6:
+            { System.out.println("Error de sintaxis 2, falta el exponente de E : "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
             }
             // fall through
           case 20: break;
+          case 7:
+            { System.out.println("Numero valido en nomenglatura cientifica: "+yytext());
+            }
+            // fall through
+          case 21: break;
+          case 8:
+            { System.out.println("Numero invalido, el numero tiene mas de un signo: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
+            }
+            // fall through
+          case 22: break;
+          case 9:
+            { System.out.println("Numero invalido, el numero tiene ceros al inicio: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
+            }
+            // fall through
+          case 23: break;
+          case 10:
+            { System.out.println("Numero con punto decimal valido: "+yytext());
+            }
+            // fall through
+          case 24: break;
+          case 11:
+            { System.out.println("Error de sintaxis 3 en nomenglatura cientifica : "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
+            }
+            // fall through
+          case 25: break;
+          case 12:
+            { System.out.println("Numero invalido, el numero tine mas de un punto: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
+            }
+            // fall through
+          case 26: break;
+          case 13:
+            { System.out.println("Error de sintaxis 1: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
+            }
+            // fall through
+          case 27: break;
+          case 14:
+            { System.out.println("Numero invalido, el numero tiene las de un signo: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
+            }
+            // fall through
+          case 28: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

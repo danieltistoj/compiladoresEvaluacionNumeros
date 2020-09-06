@@ -16,8 +16,11 @@ NUMERO19 = [1-9]
 /*Numero decimal valido*/
 NUMERO_DECIMAL = {MENOS}?{NUMERO19}{NUMERO09}*{PUNTO}({NUMERO09}*{NUMERO19}|{N0})
 
-/*Numero entoro valido*/
+/*Numero entero valido*/
 NUMERO_ENTERO = {MENOS}?{NUMERO19}{NUMERO09}*
+
+/*Numero con nomeglatura cientifica valido*/
+NOMEGLA_CIENTIFICA = ({NUMERO_DECIMAL}|{NUMERO_ENTERO})?{DECIMO}{NUMERO_ENTERO}
 
 /*Cadenas invalidas de numeros decimales: */
 /*Numero decimal invalido con mas de un signo*/
@@ -32,7 +35,13 @@ NUMERO_DECIMAL_INVALIDO_4 = {MENOS}?{NUMERO19}{NUMERO09}*{PUNTO}({PUNTO}|{NUMERO
 /*Numero entero invalalido con mas de un signo*/
 NUMERO_ENTERO_INVALIDO = ({MENOS}|{MAS})({MENOS}|{MAS})+{NUMERO19}{NUMERO09}*
 
-NOMEGLA_CIENTIFICA = ({NUMERO_DECIMAL}|{NUMERO_ENTERO}){DECIMO}{NUMERO_ENTERO}
+/*Errores en la nomenglatura cientifica*/
+/*Mas de una letra E*/
+NOMENGLA_CIENTIFICA_INVALIDA_1 = ({NUMERO_DECIMAL}|{NUMERO_ENTERO}){DECIMO}{DECIMO}+{NUMERO_ENTERO}
+/*Error falta el exponete del de la E*/
+NOMENGLA_CIENTIFICA_INVALIDA_2 = ({NUMERO_DECIMAL}|{NUMERO_ENTERO}){DECIMO}{DECIMO}*
+/*Error 3 varios E y por ultimo un numero*/
+NOMENGLA_CIENTIFICA_INVALIDA_3 = {DECIMO}{DECIMO}+{NUMERO_ENTERO}
 
 %%
 /*Seccione en donde indicamos como queremos encontrar la informacion*/
@@ -60,8 +69,19 @@ System.out.println("Numero invalido, error 4: "+yytext()+"\n"+"En la linea: "+yy
 {NUMERO_ENTERO_INVALIDO} {
 System.out.println("Numero invalido, el numero tiene mas de un signo: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
 }
+{NOMENGLA_CIENTIFICA_INVALIDA_1} {
+System.out.println("Error de sintaxis 1: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
+}
+{NOMENGLA_CIENTIFICA_INVALIDA_2} {
+System.out.println("Error de sintaxis 2, falta el exponente de E : "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
+}
+{NOMENGLA_CIENTIFICA_INVALIDA_3} {
+System.out.println("Error de sintaxis 3 en nomenglatura cientifica : "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
+}
+{DECIMO} {
+System.out.println("El termino E no puede ir solo: "+yytext()+"\n"+"En la linea: "+yyline+"\n"+"En la columna: "+yycolumn);
+}
 /*correctos*/
-
 {NUMERO_ENTERO} {
 System.out.println("Numero entero valido: "+yytext());
 }
